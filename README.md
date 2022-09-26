@@ -30,4 +30,47 @@ This process resulted with the following RuBisCO sequences:
 - 10,962 unknown
 Overall, our dataset consists of 72,395 sequences.
 
-### 3. Final sequence processing
+### 3. Creating a set of protein representatives for the tree
+We used usearch to cluster the sequences into 90% similarity clusters. Each cluster was annotated based on its members. Annotations are either:
+- Unknown: none of the members has an annotation
+- X/Unknown: some of the clusters members are annotated as X, others are unknown
+- X: all members are annotated as X
+- Ambiguous: two or more non-unknown annotations
+
+Overall, the process ended with 4,236 clusters:
+- Unknown: 1,100 clusters
+- X/Unknown: 282
+- X: 2,820
+- Ambiguous: 34
+
+### 4. Tree construction
+Each cluster representative was assigned a name based on its annotation+running index. For example: I-A.1, IV-Ykr-5, etc. 
+The sequences were aligned using muscle (v3.8.1551) with parameter -maxiters 2 (as advised in the program's user manual for sets of thousands of sequences).
+Next, positions with less than 5% amino acids were removed from the alignment using trimal (version 1.2rev59).
+Finally, fasttree (v2.1.11) with default parameters was used to create the tree.
+
+### 5. Assigning annotation to the sequences
+The resulting tree was annotated using iTol. Sequences names were used for the annotations.
+Resulting sets are
+
+| Form        | # clusters |
+| ----------- | ---------- |
+| I-A         | 128        |
+| I-B         | 20         |
+| I-Banda     | 29         |
+| I-CD1       | 285        |
+| I-CD2       | 490        |
+| I-NG1       | 15         |
+| II-III      | 61         |
+| II          | 258        |
+| III         | 704        |
+| IV-DeepYkr  | 492        |
+| IV-GOS      | 127        |
+| IV-NG1      | 67         |
+| IV-NG2      | 91         |
+| IV-NG3      | 120        |
+| IV-NonPhoto | 843        |
+| IV-Photo    | 121        |
+| IV-Unknown  | 34         |
+| IV-Ykr-2    | 211        |
+| IV-Ykr      | 37         |
