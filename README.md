@@ -12,7 +12,7 @@ RuBisCO sequences were collected from the following sources:
 - Sequences from [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023)
 - Sequences from [Banda et al., 2020](https://www.nature.com/articles/s41477-020-00762-4)
 
-### 2. Preliminary Sequence processing
+### 2. Preliminary sequence processing
 1. Only sequences with lengths between 300-700 amino acids were considered
 2. Sequences were clustered at 80% identity using usearch (v8.1.1861_i86linux64, parameters -cluster_fast -id 0.8)
 3. Cluster representatives were aligned using mafft (v7.475, default parameters), columns with more than 95% gaps were removed using timal (v1.4.rev15, -gt 0.05)
@@ -53,24 +53,46 @@ Finally, fasttree (v2.1.11) with default parameters was used to create the tree.
 The resulting tree was annotated using iTol. Sequences names were used for the annotations.
 Resulting sets are
 
-| Form        | # clusters |
-| ----------- | ---------- |
-| I-A         | 128        |
-| I-B         | 20         |
-| I-Banda     | 29         |
-| I-CD1       | 285        |
-| I-CD2       | 490        |
-| I-NG1       | 15         |
-| II-III      | 61         |
-| II          | 258        |
-| III         | 704        |
-| IV-DeepYkr  | 492        |
-| IV-GOS      | 127        |
-| IV-NG1      | 67         |
-| IV-NG2      | 91         |
-| IV-NG3      | 120        |
-| IV-NonPhoto | 843        |
-| IV-Photo    | 121        |
-| IV-Unknown  | 34         |
-| IV-Ykr-2    | 211        |
-| IV-Ykr      | 37         |
+| Form        | # clusters | # sequences | Reference   |
+| ----------- | ---------- | ----------- | ----------- |
+| I-A         | 128        | 1,332       | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| I-B         | 20         | 584         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| I-Banda     | 29         | 71          | [Banda et al., 2020](https://www.nature.com/articles/s41477-020-00762-4) |
+| I-CD1       | 285        | 48,551      | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| I-CD2       | 490        | 14,499      | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| I-NG1       | 15         | 20          | New to this analysis |
+| II-III      | 61         | 148         | [Wrighton et al., 2012](https://www.science.org/doi/abs/10.1126/science.1224041) |
+| II          | 258        | 855         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| III         | 704        | 1,249       | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-DeepYkr  | 492        | 752         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-GOS      | 127        | 343         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-NG1      | 67         | 117         | New to this analysis |
+| IV-NG2      | 91         | 175         | New to this analysis |
+| IV-NG3      | 120        | 193         | New to this analysis |
+| IV-NonPhoto | 843        | 2,703       | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-Photo    | 121        | 231         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-Unknown  | 34         | 39          | New to this analysis |
+| IV-Ykr-2    | 211        | 291         | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+| IV-Ykr      | 37         | 67          | [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) |
+
+Notes:
+- We could not distinguish between I-C and I-D
+- I-CD is divided into two groups because the group appeared in two branches on the tree
+- IV-Ykr-2 is separated from IV-Ykr because it appeared on a different brance
+
+# Process output:
+- **[RuBisCO.300-700.faa](https://www.dropbox.com/s/nqou38csfa3s8hx/RuBisCO.300-700.faa?dl=0)**: a fasta file of the 72,395 RuBisCO sequences with their annotation, marked by /RuBisCO_Form= in the sequence descriptions
+- **[RuBisCO.300-700.faa.csv](https://www.dropbox.com/s/bawwyvgmju8twt3/RuBisCO.300-700.faa.csv?dl=0)**: information about each sequence:
+  + membership: cluster membership in the 90% usearch clustering: S=seed, H=member
+  + cluster: cluster ID
+  + length: sequence length
+  + pidentity: % identity to the seed
+  + annotation_preliminary: annotation based on preliminary sequence processing
+  + annotation: annotation based on the tree
+- **[RuBisCO.300-700.0.9.faa.csv](https://www.dropbox.com/s/hk8so1h9j68bo2n/RuBisCO.300-700.0.9.faa.csv?dl=0)**: cluster information:
+  + size: cluster size
+  + seed: cluster seed (marked as S in RuBisCO.300-700.faa.csv)
+  + annotation_preliminary: annotation based on preliminary sequence processing and the process described above
+  + type_ino: for ambiguous clusters, information about the different types
+  + tree_name: name of representative (the seed) in the tree
+  + annotation: annotation based on the tree
