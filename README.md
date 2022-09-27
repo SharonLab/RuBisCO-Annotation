@@ -1,14 +1,22 @@
 # RuBisCO Annotation
 Thie repository contains the files that were used to annotate the RuBisCO sequences for the RuBisCOlympics project.
 
+## Repository contents
+- **RuBisCO-annotation.ipynb**: code that was used to create the nwk file in the tree directory and the files in the for-tree and final directories. The process implemented is described in this README file. 
+- **data**: files that were used for preliminary annotation of the sequences (see (1) below)
+- **final**: the result of the process (see "Process output" below)
+- **for-tree**: files generated for the tree construction (see (3) below)
+- **tree**: the constructed tree (see (4) below and code in RuBisCO-annotation.ipynb) and the annotations based on the tree. The tree was annotated in [iTOL](https://itol.embl.de/).
+- **versions**: software versions for software used in this project
+
 ## Process
 Analysis process consists of the following steps:
 
 ### 1. Sequence collection
-RuBisCO sequences were collected from the following sources:
-- NCBI's nr database, database was downloaded on December 2020 and searched as described in [Davidi et al., 2020](https://www.embopress.org/doi/full/10.15252/embj.2019104081).
-- Local assemblies of the 244 samples from the Tara Ocean expedition
-- Various assemblies downloaded from [ggkbase](https://ggkbase.berkeley.edu/), from [Wrighton et al., 2012](https://www.science.org/doi/abs/10.1126/science.1224041), [Brown et al., 2015](https://www.nature.com/articles/nature14486) and [Anantharaman et al., 2016](https://www.nature.com/articles/ncomms13219)
+RuBisCO sequences were previously collected from the following sources:
+- NCBI's nr database. The database was downloaded on December 2020 and searched as described in [Davidi et al., 2020](https://www.embopress.org/doi/full/10.15252/embj.2019104081).
+- In-house assemblies of the 244 samples from the Tara Oceans expedition ([Sunagawa et al., 2015](https://www.science.org/doi/full/10.1126/science.1261359)).
+- Various assemblies from [Wrighton et al., 2012](https://www.science.org/doi/abs/10.1126/science.1224041), [Brown et al., 2015](https://www.nature.com/articles/nature14486) and [Anantharaman et al., 2016](https://www.nature.com/articles/ncomms13219).
 - Sequences from [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023)
 - Sequences from [Banda et al., 2020](https://www.nature.com/articles/s41477-020-00762-4)
 
@@ -17,17 +25,18 @@ RuBisCO sequences were collected from the following sources:
 2. Sequences were clustered at 80% identity using usearch (v8.1.1861_i86linux64, parameters -cluster_fast -id 0.8)
 3. Cluster representatives were aligned using mafft (v7.475, default parameters), columns with more than 95% gaps were removed using timal (v1.4.rev15, -gt 0.05)
 4. Fasttree (v2.1.10, default parameters) was used to construct a tree for the MSA
-5. Type I and Type IV RuBisCOs were identified based on annotated sequences. Eukaryotic Type I RuBisCOs were identified based on taxonomy provided with the sequences
+5. Type I and Type IV RuBisCOs were identified based on annotated sequences from [Tabita et al., 2008](https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2008.0023) and [Banda et al., 2020](https://www.nature.com/articles/s41477-020-00762-4). Eukaryotic Type I RuBisCOs were identified based on taxonomy provided with the sequences
 6. Separate trees for non-eukaryotic Type I and Type IV RuBisCOs were created, sequences were annotated using sub-type annotations available in the data
+7. Annotated Type II, II-III and III RuBisCOs from NCBI were identified
 
 This process resulted with the following RuBisCO sequences:
-- 51,859 eukaryotic Type-I
-- 4,302 non-eularyotic Type-I, most of them annotated to sub-types
-- 74 Type II
-- 24 Type II-III
-- 515 Type III
-- 4,659 Type IV, most of them annotated to sub-types
-- 10,962 unknown
+- 51,859 eukaryotic Type-I (in data/Type_I.Eukaryote.list)
+- 4,302 non-eularyotic Type-I, most of them annotated to sub-types (in data/Type_I.non-Eukaryote.info.txt)
+- 66 Type II (in data/Type_II.list)
+- 24 Type II-III (in data/Type_II_III.list)
+- 364 Type III (in data/Type_III.list)
+- 4,659 Type IV, most of them annotated to sub-types (in data/Type_IV.info.txt)
+- 11,121 unknown
 Overall, our dataset consists of 72,395 sequences.
 
 ### 3. Creating a set of protein representatives for the tree
@@ -81,15 +90,15 @@ Notes:
 - IV-Ykr-2 is separated from IV-Ykr because it appeared on a different brance
 
 ## Process output
-- **[RuBisCO.300-700.faa](https://www.dropbox.com/s/nqou38csfa3s8hx/RuBisCO.300-700.faa?dl=0)**: a fasta file of the 72,395 RuBisCO sequences with their annotation, marked by /RuBisCO_Form= in the sequence descriptions
-- **[RuBisCO.300-700.faa.csv](https://www.dropbox.com/s/bawwyvgmju8twt3/RuBisCO.300-700.faa.csv?dl=0)**: information about each sequence:
+- **final/RuBisCO.300-700.faa**: a fasta file of the 72,395 RuBisCO sequences with their annotation, marked by /RuBisCO_Form= in the sequence descriptions
+- **final/RuBisCO.300-700.faa.csv**: information about each sequence:
   + membership: cluster membership in the 90% usearch clustering: S=seed, H=member
   + cluster: cluster ID
   + length: sequence length
   + pidentity: % identity to the seed
   + annotation_preliminary: annotation based on preliminary sequence processing
   + annotation: annotation based on the tree
-- **[RuBisCO.300-700.0.9.faa.csv](https://www.dropbox.com/s/hk8so1h9j68bo2n/RuBisCO.300-700.0.9.faa.csv?dl=0)**: cluster information:
+- **final/RuBisCO.300-700.0.9.faa.csv**: cluster information:
   + size: cluster size
   + seed: cluster seed (marked as S in RuBisCO.300-700.faa.csv)
   + annotation_preliminary: annotation based on preliminary sequence processing and the process described above
