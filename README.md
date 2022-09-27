@@ -80,7 +80,7 @@ Notes:
 - I-CD is divided into two groups because the group appeared in two branches on the tree
 - IV-Ykr-2 is separated from IV-Ykr because it appeared on a different brance
 
-# Process output:
+## Process output
 - **[RuBisCO.300-700.faa](https://www.dropbox.com/s/nqou38csfa3s8hx/RuBisCO.300-700.faa?dl=0)**: a fasta file of the 72,395 RuBisCO sequences with their annotation, marked by /RuBisCO_Form= in the sequence descriptions
 - **[RuBisCO.300-700.faa.csv](https://www.dropbox.com/s/bawwyvgmju8twt3/RuBisCO.300-700.faa.csv?dl=0)**: information about each sequence:
   + membership: cluster membership in the 90% usearch clustering: S=seed, H=member
