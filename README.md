@@ -8,6 +8,9 @@ Thie repository contains the files that were used to annotate the RuBisCO sequen
 - **for-tree**: files generated for the tree construction (see (3) below)
 - **tree**: the constructed tree (see (4) below and code in RuBisCO-annotation.ipynb) and the annotations based on the tree. The tree was annotated in [iTOL](https://itol.embl.de/).
 - **versions**: software versions for software used in this project
+- **preparing-raxml-tree-data.ipynb**: a jupyter notebook with the code for preparing the data for the raxml tree. Output was written to the directory for-raxml-tree.
+- **for-raxml-tree**: data for the raxml tree that was prepared from the 0.8 clustering of the RuBisCOs. This is the output of preparing-raxml-tree-data.ipynb
+- **raxml-tree**: everything related to the raxml tree of the 0.8 clustering. The file that was used for the iTOL tree is RAxML_bipartitionsBranchLabels.RuBisCO.300-700.0.8.faa.muscle_maxiters_100.aln.trimal_0.05.aln.raxml.nwk.
 
 ## Process
 Analysis process consists of the following steps:
@@ -105,3 +108,6 @@ Notes:
   + type_ino: for ambiguous clusters, information about the different types
   + tree_name: name of representative (the seed) in the tree
   + annotation: annotation based on the tree
+
+## Raxml tree
+Raxml tree was created based on the 0.8 clustering of the RuBisCOs. 2,255 clusters are represented. The data was prepared using the preparing-raxml-tree-data.ipynb jupyter notebook and its output was written to for-raxml-tree. The tree itself is in the raxml-tree directory, including the code that was used to create it (run.sh) on the Linux server. In iTOL, only groups that are known from the literature were colored (All the NGx groups are our additions for new groups that do not correspond to anything that we found in the literature). Note the I-CD1 is probably form I-B and I-CD2 probably consists of I-C and I-D. 
