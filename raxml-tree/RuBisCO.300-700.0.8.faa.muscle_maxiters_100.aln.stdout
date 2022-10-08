@@ -1,0 +1,101 @@
+Started Tue Oct  4 01:44:37 2022
+muscle -in RuBisCO.300-700.0.8.faa -out RuBisCO.300-700.0.8.faa.muscle_maxiters_100.aln -maxiters 100 -log RuBisCO.300-700.0.8.faa.muscle_maxiters_100.aln.stdout 
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Invalid character '*' in FASTA sequence data, ignored
+
+*** WARNING ***  Assuming Amino (see -seqtype option), invalid letters found: J
+Finished Tue Oct  4 11:18:03 2022
